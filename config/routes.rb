@@ -26,7 +26,7 @@ Rails.application.routes.draw do
         resources :samples
       end
     end
-    root 'pages#home'   # root_path for BE 
+    root 'pages#home'
     get :demo, to: 'pages#demo', path: 'demo'
     resources :people
   end
