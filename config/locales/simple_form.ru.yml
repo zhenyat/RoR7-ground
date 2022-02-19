@@ -1,29 +1,30 @@
-en:
+ru:
   simple_form:
-    "login":        'Login to Administrative Module'
-    "yes":          'Yes'
-    "no":           'No'
+    "login":        'Вход в Административный модуль'
+    "yes":          'Да'
+    "no":           'Нет'
     required:
-      text:         'required'
+      text:         'обязательный'
       mark:         '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message:  "Please review the problems below:"
+      default_message: 'Пожалуйста, посмотрите проблемы, указанные ниже:'
     # Examples
     labels:
       defaults:
-        password:       Password
-        email:          Email
+        password:       Пароль
+        email:          Э/почта
     submit:
-      login:            Sign in
-      logout:           Sign out
+      login:            Войти
+      logout:           Выйти
 
     alert:
-      access_denied:        Access denied for this user
-      incorrect_password:   Incorrect password
-      incorrect_email:      Incorrect email or no such user
+      access_denied:        Доступ пользователю закрыт
+      incorrect_password:   Неверный пароль
+      incorrect_email:      Ошибка в email или нет такого пользователя
+
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'
