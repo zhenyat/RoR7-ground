@@ -5,8 +5,7 @@
   <tbody>
     <% @user.attributes.each do |key, value| %>
       <% if key == 'id' || key.include?('digest') || key == 'created_at' || key == 'updated_at' %>
-        <!--/skip these attributes
-        -->
+        <!--/skip these attributes -->
       <% else %>
         <tr>
           <% if key == 'status' %>
