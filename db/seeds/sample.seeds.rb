@@ -1,6 +1,6 @@
 begin
   if (Sample.present? and not Sample.exists?)
-    Sample.create([
+    Sample.create!([
       { name:   'hemp_paste', 
         title:  'Паста конопляная Классическая 200 г',
         price:  288.00,

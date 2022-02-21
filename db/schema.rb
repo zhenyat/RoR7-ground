@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_02_20_221401) do
+ActiveRecord::Schema[7.0].define(version: 2022_02_20_195847) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -54,6 +54,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_02_20_221401) do
     t.integer "role"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "samples", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "title", null: false
+    t.decimal "price", default: "0.0", null: false
+    t.integer "quantity", default: 0, null: false
+    t.integer "position"
+    t.integer "status", limit: 1, default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_samples_on_name", unique: true
   end
 
   create_table "users", force: :cascade do |t|
