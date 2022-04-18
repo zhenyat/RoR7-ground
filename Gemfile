@@ -7,12 +7,13 @@
 #   No: haml-rails, importmap-rails, bootstrap, sassc-rails
 #
 #   19.02.2022  ZT
+#   18.04.2022  Ruby 3.1.2
 #####################################################################
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.1"
-gem "rails", "~> 7.0.2", ">= 7.0.2.2"
+ruby "3.1.2"
+gem "rails", "~> 7.0.2", ">= 7.0.2.3"
 
 gem "sprockets-rails"   # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "puma"              # Use the Puma web server [https://github.com/puma/puma]

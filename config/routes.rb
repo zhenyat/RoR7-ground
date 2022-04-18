@@ -2,22 +2,30 @@
 #   12.02.2022  Adopted from Rails 6 (zt_admin)
 ################################################################################
 Rails.application.routes.draw do
-  # mount_devise_token_auth_for 'Account', at: 'auth'
+  namespace :admin do
+  end
+  # Demo issues
+  get 'pages/demo'
+  resources :people
+# mount_devise_token_auth_for 'Account', at: 'auth'
  
   app_scope = MULTILINGUAL ? "/:locale" : "/"
   scope app_scope, locale: /#{I18n.available_locales.join("|")}/ do
 
     # Session resources
-    get    'sessions/new'                                # sessions_new_path
-    post   'login',  to: 'sessions#create'               # login_path  - creates new session (login)
-    get  'logout', to: 'sessions#destroy', as: :logout # logout_path - destroys    session (log out)
-  # delete 'logout', to: 'sessions#destroy', as: :logout # logout_path - deletes session (log out)
+    get   'sessions/new'                                # sessions_new_path
+    post  'login',  to: 'sessions#create'               # login_path  - creates new session (login)
+    get   'logout', to: 'sessions#destroy', as: :logout # logout_path - destroys    session (log out)
+  #delete 'logout', to: 'sessions#destroy', as: :logout # logout_path - deletes session (log out)
 
     namespace :admin do
       root 'panel#index'                                 # admin_root_path
       resources :users
       resources :samples
       resources :accounts, only: [:index, :show]
+      resources :partners
+      resources :phones
+      resources :banks
       # Add new admin resources before this line
     end
   
@@ -43,11 +51,3 @@ Rails.application.routes.draw do
   end
 end
 
-Rails.application.routes.draw do
-  resources :people
-  get 'pages/demo'
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
-end

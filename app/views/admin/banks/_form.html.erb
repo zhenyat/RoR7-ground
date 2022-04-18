@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-ms-6">
+      <%=  simple_form_for([:admin, @bank], html: {multipart: true}) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%= f.input :title %>
+          <%= f.input :bic %>
+          <%= f.input :url %>
+          <%= f.input :comment %>
+          <%= f.input :status, default: 0 %>
+          <%#= render 'admin/shared/status_buttons', f: f %>
+          <%= render 'admin/shared/form_images', f: f, object: @bank %>
+          <%= render 'admin/phones/nested_form', f: f, object: @bank %>
+
+          <%= render 'admin/shared/form_actions', f: f, object: @bank %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

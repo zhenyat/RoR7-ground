@@ -1,0 +1,44 @@
+
+<%= simple_form_for(@partner) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :code %>
+    <%= f.input :title %>
+    <%= f.input :kind %>
+    <%= f.input :role %>
+    <%= f.input :url %>
+    <%= f.input :comment %>
+    <%= f.input :status %>
+  </div>
+  <hr>
+  <div>
+    <%= f.fields_for :phones do |phone| %>
+      <%= render 'phones/phone_fields', :f => phone %>
+    <% end %>
+  </div>
+  <hr>
+  <div>  
+    <%= f.fields_for :addresses do |address| %>
+      <%= render 'addresses/address_fields', :f => address %>
+    <% end %>
+  </div>
+  <hr>
+  <div>
+    <%= f.fields_for :emails do |email| %>
+      <%= render 'emails/email_fields', :f => address %>
+    <% end %>
+  </div>
+  <hr>
+  <div>
+    <%= f.fields_for :detail_set do |email| %>
+      <%= render 'detail_sets/detail_set_fields', :f => address %>
+    <% end %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

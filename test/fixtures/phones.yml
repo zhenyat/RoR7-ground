@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phoneable: one
+  phoneable_type: Phoneable
+  kind: 1
+  country_code: MyString
+  destination_code: MyString
+  subscriber_number: MyString
+  comment: MyString
+  status: 1
+
+two:
+  phoneable: two
+  phoneable_type: Phoneable
+  kind: 1
+  country_code: MyString
+  destination_code: MyString
+  subscriber_number: MyString
+  comment: MyString
+  status: 1

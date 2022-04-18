@@ -49,11 +49,14 @@
               <%#= link_to t(Category.model_name.human(count: 2)),  admin_categories_path %>
             </div>
             <div class="dropdown-item">
-              <%= link_to t(Sample.model_name.human(count: 2)), admin_samples_path %>
+              <%= link_to t(Partner.model_name.human(count: 2)), admin_partners_path %>
             </div>
             <div class="dropdown-divider"></div>
             <div class="dropdown-item">
-              <%= link_to t(:dummy), '#' %>
+              <%= link_to t(Sample.model_name.human(count: 2)), admin_samples_path %>
+            </div>
+            <div class="dropdown-item">
+              <%#= link_to t(:dummy), '#' %>
             </div>
           </div>
         </li>

@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  detailable: one
+  detailable_type: Detailable
+  inn: MyString
+  kpp: MyString
+  ogrn: MyString
+  ogrnip: MyString
+  okpo: MyString
+  okato: MyString
+  certificate_number: MyString
+  certificate_date: 2022-03-09
+  comment: MyString
+  status: 1
+
+two:
+  detailable: two
+  detailable_type: Detailable
+  inn: MyString
+  kpp: MyString
+  ogrn: MyString
+  ogrnip: MyString
+  okpo: MyString
+  okato: MyString
+  certificate_number: MyString
+  certificate_date: 2022-03-09
+  comment: MyString
+  status: 1

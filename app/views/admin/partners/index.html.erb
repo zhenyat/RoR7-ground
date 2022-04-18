@@ -1,0 +1,17 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Partners</h1>
+
+<div id="partners">
+  <% @partners.each do |partner| %>
+    <%= render partner %>
+    <p>
+      <%#= link_to "Show this partner", admin_partner_path %> 
+      <%= render 'admin/shared/index_buttons', resource: partner %>
+
+    </p>
+    <hr>
+  <% end %>
+</div>
+
+<%= link_to "New partner", new_admin_partner_path %>

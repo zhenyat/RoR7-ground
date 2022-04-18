@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  emailable: one
+  emailable_type: Emailable
+  kind: 1
+  address: MyString
+  comment: MyString
+  status: 1
+
+two:
+  emailable: two
+  emailable_type: Emailable
+  kind: 1
+  address: MyString
+  comment: MyString
+  status: 1
