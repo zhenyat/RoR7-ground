@@ -1,0 +1,20 @@
+<h1 class="text-primary">Table Tags</h1>
+<h4>Classical</h4>
+<%= display_standard_table(
+  [
+    { :name => 'last_name', :display_name => 'Last name' },
+    { :name => 'first_name', :display_name => 'First name' },
+    { :name => 'email',     :display_name => 'email' },
+    { :name => 'role',      :display_name => 'role' },
+  ], @users) %>
+<hr/>
+<h4>Just Exercise</h4>
+<%= display_array_table(
+  [
+    { :name => 'code', :display_name => 'Code:' },
+    { :name => 'msg', :display_name => 'Message:' }
+  ], @data) %>
+<hr/>
+<h4>Table body only</h4>
+<%= table_body @data %>
+

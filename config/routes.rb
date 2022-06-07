@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     end
     root 'pages#home'
     get :demo, to: 'pages#demo', path: 'demo'
+    get :tags, to: 'pages#tags', path: 'tags'
     resources :people
   end
 
@@ -50,4 +51,3 @@ Rails.application.routes.draw do
     get "/*path", to: redirect("/#{I18n.default_locale}/%{path}", status: 302), constraints: {path: /(?!(rails\/active_storage|#{I18n.available_locales.join("|")})\/).*/}, format: false
   end
 end
-

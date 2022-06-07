@@ -65,7 +65,7 @@ module ApplicationHelper
   ##############################################################################
   # HTML element to switch language among available ones
   #
-  # Source:  http://dhampik.ru/blog/rails-routes-tricks-with-locales
+  # Source:  http://dhampik.ru/blog/rails-routes-tricks-with-s
   #
   # 17.11.2013  The `alternative version` in the source is used
   # 09.01.2017  Fixing error: Attempting to generate a URL from non-sanitized request parameters!
@@ -119,7 +119,7 @@ module ApplicationHelper
           locale_param = request.path == root_path ? root_path(locale: loc) : params.merge(locale: loc).permit!
         end
         concat(content_tag(:div, class: "dropdown-item") do
-          concat content_tag(:div, (link_to I18n.t(:language, locale: loc), locale_param), class: (I18n.locale == loc ? "active" : ""))
+          concat content_tag(:div, (link_to I18n.t(:language, locale: loc), locale_param), class: (I18n. == loc ? "active" : ""))
         end)
       end
     end
