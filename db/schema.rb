@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_03_11_140650) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_09_170605) do
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
     t.text "body"
@@ -161,6 +161,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_03_11_140650) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["phoneable_type", "phoneable_id"], name: "index_phones_on_phoneable"
+  end
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "samples", force: :cascade do |t|

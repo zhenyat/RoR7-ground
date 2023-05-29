@@ -66,22 +66,31 @@ class Admin::DetailSetsController < Admin::BaseController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_detail_set
-      @detail_set = DetailSet.find(params[:id])
-    end
 
-    def set_detailables
-      @detailables = Partner.active
-      @detailable_types_list = DetailSet.includes(:detailable).map(&:detailable_type).uniq.sort
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_detail_set
+    @detail_set = DetailSet.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def detail_set_params
-      params.require(:detail_set).permit(
-        :detailable_id, :detailable_type, :inn, :kpp, :ogrn, :ogrnip,
-        :okato, :certificate_number, :certificate_date, :comment, :status,
-        :detailable_gid
-      )
+  def set_detailables
+    @detailables = Partner.active
+    @detailable_types_list = DetailSet.includes(:detailable).map(&:detailable_type).uniq.sort
+  end
+
+  # Only allow a list of trusted parameters through.
+  def detail_set_params
+    params.require(:detail_set).permit(
+      :detailable_id, :detailable_type, :inn, :kpp, :ogrn, :ogrnip,
+      :okato, :certificate_number, :certificate_date, :comment, :status,
+      :detailable_gid
+    )
+  end
+
+  def dummy
+    begin
+      puts "hi"
+    rescue
+      puts "NO"
     end
+  end
 end

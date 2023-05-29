@@ -9,13 +9,15 @@
 #   19.02.2022  ZT
 #   18.04.2022  Ruby 3.1.2
 #   06.06.2022  Rails 7.0.3
+#   30.03.2023  Ruby 3.2.1 / Rails
+#   06.04.2023  Ruby 3.2.2 
 #####################################################################
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.1.2"
-gem "rails", "~> 7.0.3"
-
+ruby "3.2.2"
+gem "rails", "~> 7.0.5"
+gem 'psych', '< 4'
 gem "sprockets-rails"   # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "puma"              # Use the Puma web server [https://github.com/puma/puma]
 gem "jsbundling-rails"  # Bundle and transpile JavaScript [https://github.com/rails/jsbundling-rails]
