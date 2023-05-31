@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+    <div class="col-ms-6">
+      <%=  simple_form_for([:admin, @plant], html: {multipart: true}) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+        <div class="form-inputs">
+          <%= f.input :name %>
+          <%#= f.input :colors %>
+          <br/><%= f.label :colors %><br/>
+          <%= select_tag(
+              :colors,
+              options_for_select(ZT_PLANT_COLORS),
+              # options_for_select(
+              #   ['Insignificant', 'White', 'Red', 'Orange', 'Yellow',
+              #   'Green','Blue', 'Lavender', 'Pink', 'Purple',
+              #   'Brown', 'Not applicable'].sort!{ |x, y| x[0] <=> y[0]}
+              # ),
+              {:multiple => true, :size => 5}
+            )
+          %>
+
+          <%= render 'admin/shared/form_actions', f: f, object: @plant %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

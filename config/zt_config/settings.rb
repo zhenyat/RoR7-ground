@@ -21,6 +21,12 @@ if ZT_DEBUG == true && !ZT_LOG_FILE.nil?
   File.open(ZT_LOG_FILE, 'w') { |file| file.puts "Starting debug log..."}
 end
 
+##### Plant model: non-attribute parameters   #####
+ZT_PLANT_COLORS   = ZT_PLANT['colors'].sort{ |x, y| x[0] <=> y[0]}
+ZT_PLANT_LIGHTS   = ZT_PLANT['lights']
+ZT_PLANT_SOILS    = ZT_PLANT['soils']
+ZT_PLANT_SOIL_PH  = ZT_PLANT['soil_ph']
+
 ##### Mail  #####
 MAIL_BCC = ZT_CONFIG['mail']['bcc']
 

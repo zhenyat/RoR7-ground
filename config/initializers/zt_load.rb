@@ -22,14 +22,20 @@ if File.exist? "#{Rails.root}/#{filename}"
   end
 end
 
-# Sets Constants and Parameters for the App run
-filename = 'config/zt_config/settings.rb'
+# Gets Plant parameters as array ZT_PLANT[]
+filename = 'config/zt_config/plant.yml'
 if File.exist? "#{Rails.root}/#{filename}"
-  eval File.read("#{Rails.root}/#{filename}")
+  ZT_PLANT = YAML.load_file("#{Rails.root}/#{filename}")
 end
 
 # Gets Russian Regions as array ZT_RUSSIAN_REGIONS[]
 filename = 'config/zt_config/russian_regions.yml'
 if File.exist? "#{Rails.root}/#{filename}"
   ZT_RUSSIAN_REGIONS = YAML.load_file("#{Rails.root}/#{filename}")
+end
+
+### Sets finaly Constants and Parameters for the App run
+filename = 'config/zt_config/settings.rb'
+if File.exist? "#{Rails.root}/#{filename}"
+  eval File.read("#{Rails.root}/#{filename}")
 end
