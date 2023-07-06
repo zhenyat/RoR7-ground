@@ -12,7 +12,7 @@ colors:
   - Brown
   - Not applicable
 
-lights:
+sun_lights:
   - Full sun
   - Partial shade
   - Full shade
