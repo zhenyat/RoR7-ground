@@ -10,13 +10,16 @@
 #   18.04.2022  Ruby 3.1.2
 #   06.06.2022  Rails 7.0.3
 #   30.03.2023  Ruby 3.2.1 / Rails
-#   06.04.2023  Ruby 3.2.2 
+#   06.04.2023  Ruby 3.2.2
+#   09.10.2023  Rails 7.1.0 
+#   09.10.2023  3.3.0 / 7.1.3 
 #####################################################################
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.2.2"
-gem "rails", "~> 7.0.5"
+ruby "3.3.0"
+gem "rails", "~> 7.1.3"
+# gem 'psych', '>= 4'
 gem 'psych', '< 4'
 gem "sprockets-rails"   # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "puma"              # Use the Puma web server [https://github.com/puma/puma]
@@ -74,6 +77,6 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
-  gem "selenium-webdriver"
-  gem "webdrivers"
+  # gem 'selenium-webdriver', '~> 4.11'
+  gem "webdrivers", "= 5.3.0"
 end
